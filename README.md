@@ -1,97 +1,40 @@
-# ⚠️ This repository is DEPRECATED and no longer maintained ⚠️
+# Vena Protocol
 
-For the latest Aave V3 code visit the V3 Origin Repository [here](https://github.com/aave-dao/aave-v3-origin).
+This repository contains the smart contracts source code for Vena Protocol. The repository uses Docker Compose and Hardhat as development environment for compilation, testing and deployment tasks.
 
-[![Build pass](https://github.com/aave/aave-v3-core/actions/workflows/node.js.yml/badge.svg)](https://github.com/aave/aave-v3-core/actions/workflows/node.js.yml)
-[![codecov](https://codecov.io/gh/aave/aave-v3-core/branch/master/graph/badge.svg?token=U50KN38G67)](https://codecov.io/gh/aave/aave-v3-core)
+🌐 **Website:** [https://www.vena.finance/](https://www.vena.finance/)
 
-```
-        .///.                .///.     //.            .//  `/////////////-
-       `++:++`              .++:++`    :++`          `++:  `++:......---.`
-      `/+: -+/`            `++- :+/`    /+/         `/+/   `++.
-      /+/   :+/            /+:   /+/    `/+/        /+/`   `++.
-  -::/++::`  /+:       -::/++::` `/+:    `++:      :++`    `++/:::::::::.
-  -:+++::-`  `/+:      --++/---`  `++-    .++-    -++.     `++/:::::::::.
-   -++.       .++-      -++`       .++.    .++.  .++-      `++.
-  .++-         -++.    .++.         -++.    -++``++-       `++.
- `++:           :++`  .++-           :++`    :+//+:        `++:----------`
- -/:             :/-  -/:             :/.     ://:         `/////////////-
-```
+> **Note:** Vena Protocol is a fork of Aave V3, extended with reputation-based pricing mechanisms.
 
-# Aave Protocol v3
+## What is Vena?
 
-This repository contains the smart contracts source code and markets configuration for Aave Protocol V3. The repository uses Docker Compose and Hardhat as development environment for compilation, testing and deployment tasks.
+Vena is a reputation-priced liquidity protocol where capital has memory. Unlike traditional lending markets with flat rates, Vena adapts pricing based on reputation earned through past behavior and accountability.
 
-## What is Aave?
+### How Vena Works
 
-Aave is a decentralized non-custodial liquidity markets protocol where users can participate as suppliers or borrowers. Suppliers provide liquidity to the market to earn a passive income, while borrowers are able to borrow in an overcollateralized (perpetually) or undercollateralized (one-block liquidity) fashion.
+**Reputation-Priced Liquidity**
+
+Rates are not flat. They respond to reputation earned through past behavior and accountability. On Vena, capital prices trust, not anonymity.
+
+**Reputation Through Prints**
+
+Vena reflects reputation using Prints—an evolving signal built from repeatable actions, both onchain and offchain.
+
+**Capital with Memory**
+
+Good behavior compounds. Poor behavior decays. Pricing adapts as your reputation changes.
+
+**Full Control by Default**
+
+You control your assets through self-custody and your reputation through your actions.
 
 ## Documentation
 
-See the link to the technical paper or visit the Aave Developer docs
-
-- [Technical Paper](./techpaper/Aave_V3_Technical_Paper.pdf)
-
-- [Developer Documentation](https://docs.aave.com/developers/)
+Documentation for Vena Protocol is coming soon.
 
 ## Audits and Formal Verification
 
-You can find all audit reports under the audits folder
-
-V3.0.1 - December 2022
-
-- [PeckShield](./audits/09-12-2022_PeckShield_AaveV3-0-1.pdf)
-- [SigmaPrime](./audits/23-12-2022_SigmaPrime_AaveV3-0-1.pdf)
-
-V3 Round 1 - October 2021
-
-- [ABDK](./audits/27-01-2022_ABDK_AaveV3.pdf)
-- [OpenZeppelin](./audits/01-11-2021_OpenZeppelin_AaveV3.pdf)
-- [Trail of Bits](./audits/07-01-2022_TrailOfBits_AaveV3.pdf)
-- [Peckshield](./audits/14-01-2022_PeckShield_AaveV3.pdf)
-
-V3 Round 2 - December 2021
-
-- [SigmaPrime](./audits/27-01-2022_SigmaPrime_AaveV3.pdf)
-
-Formal Verification - November 2021-January 2022
-
-- [Certora](./certora/Aave_V3_Formal_Verification_Report_Jan2022.pdf)
-
-## Connect with the community
-
-You can join the [Discord](http://aave.com/discord) channel or the [Governance Forum](https://governance.aave.com/) to ask questions about the protocol or talk about Aave with other peers.
-
-## Getting Started
-
-You can install `@aave/core-v3` as an NPM package in your Hardhat or Truffle project to import the contracts and interfaces:
-
-`npm install @aave/core-v3`
-
-Import at Solidity files:
-
-```
-import {IPool} from "@aave/core-v3/contracts/interfaces/IPool.sol";
-
-contract Misc {
-
-  function supply(address pool, address token, address user, uint256 amount) public {
-    IPool(pool).supply(token, amount, user, 0);
-    {...}
-  }
-}
-```
-
-The JSON artifacts with the ABI and Bytecode are also included in the bundled NPM package at `artifacts/` directory.
-
-Import JSON file via Node JS `require`:
-
-```
-const PoolV3Artifact = require('@aave/core-v3/artifacts/contracts/protocol/pool/Pool.sol/Pool.json');
-
-// Log the ABI into console
-console.log(PoolV3Artifact.abi)
-```
+Security audits for Vena Protocol are planned prior to mainnet deployment.
 
 ## Setup
 
